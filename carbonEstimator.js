@@ -1,3 +1,4 @@
+export async function estimateCarbonFootprint(domain) {
 const domainCarbonMap = {
     "youtube.com": 2.8,
     "facebook.com": 1.5,
@@ -12,12 +13,12 @@ const domainCarbonMap = {
     // Add more domains and their carbon footprints as needed
 };
 
-async function estimateCarbonFootprint(domain) {
+
     if (domainCarbonMap[domain]) {
         return domainCarbonMap[domain].toFixed(2); // Return the predefined value
     }
     try {
-        const response = await fetch(`https:// ${domain}`, {
+        const response = await fetch(`https://${domain}`, {
             method: 'GET',
             headers: {
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',

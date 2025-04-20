@@ -1,3 +1,4 @@
+import { estimateCarbonFootprint } from './carbonEstimator.js';
 chrome.webNavigation.onCompleted.addListener(async (details) => {
     try {
       const tab = await chrome.tabs.get(details.tabId);
