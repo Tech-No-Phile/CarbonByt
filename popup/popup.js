@@ -1,18 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('carbon-list');
-    chrome.storage.local.get("carbonData", (data) => {
-      const carbonData = data.carbonData || {};
-      if (Object.keys(carbonData).length === 0) {
-        container.innerHTML = '<p>No carbon data available.</p>';
-        return;
-      }
+document.addEventListener('DOMContentLoaded', async () => {
+    const list = document.getElementById('carbonList');
+    const clearBtn = document.getElementById('clearBtn');
 
-      let html = "<ul>";
-      for (const [domain, carbon] of Object.entries(carbonData)) {
-        html += `<li>${domain}: ${carbonData[domain]} kg CO2</li>`;
-      }
-        html += "</ul>";
-        container.innerHTML = html;
+    chrome.storage.local.get(null, (data) => {
+        const entries = Object.entries(data)
+        .filter(([key]) => key.includes('.'))
+        .slice(-5)
+        .reverse();
+        if (entries.length === 0) {
+            list.innerHTML = '<p>No carbon data available.</p>';
+        }
+        else {
+            entries.forEach(([domain, carbon]) => {
+                const div = document.createElement('div');
+                div.textContent = `${domain}: ${carbon} kg CO2`;
+                list.appendChild(div);
+            });
+        }
+      
+    });
+    clearBtn.addEventListener('click', () => {
+        chrome.storage.local.clear(() => {
+            list.innerHTML = '<p>No carbon data available.</p>';
+        });
     });
   });
   
