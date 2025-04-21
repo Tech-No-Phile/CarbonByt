@@ -16,13 +16,13 @@ export async function fetchGPTInsights() {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer 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` 
+                        'Authorization': `Bearer ${CONFIG.GPT_API_KEY}` // Ensure you have your OpenAI API key set in your environment variables
                     },
                     body: JSON.stringify({
                         model: 'gpt-4.0',
                         messages: [
-                            { role: 'system', content: 'You are a helpful assistant.' },
-                            { role: 'user', content: `Here are the last 5 carbon data entries:\n${JSON.stringify(entries)}\nCan you provide insights on this data?` }
+                            { role: 'system', content: 'You are a sustainability assistant. Help users reduce their carbon footprint.'},
+                            { role: 'user', content: prompt }
                         ],
                         temperature: 0.7,
                     })
