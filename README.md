@@ -17,7 +17,7 @@ A Chrome extension to estimate the Carbon Footprint of the websites you visit.
 - 🌈 Error-resilient with default carbon range fallback
 
 ## 🖥️ Screenshots
-![Demo Extension](Resources\1.jpeg)
+![Demo Extension](/CarbonByt/Resources/1.jpeg)
 
 ![Demo Extension](Resources\2.jpeg)
 
