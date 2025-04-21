@@ -1,4 +1,4 @@
-import { fetchGPTInsights } from './gptIntegration.js';
+import { fetchGPTInsights } from '../gptIntegration.js';
 document.addEventListener('DOMContentLoaded', async () => {
     const list = document.getElementById('carbonList');
     const clearBtn = document.getElementById('clearBtn');

@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 20px;
     width: 320px;
-    background: linear-gradient(to bottom right, rgba(57, 32, 1, 0.796), rgba(255, 241, 151, 0.723));
+    background: linear-gradient(to bottom right, rgba(36, 20, 1, 0.796), rgba(214, 146, 62, 0.723));
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     color: #eaffea;
@@ -39,27 +39,23 @@ body {
     transform: scale(1.03);
   }
   
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
   
   button {
     padding: 10px 14px;
     font-size: 13px;
     border: none;
     border-radius: 10px;
-    background: rgb(49, 35, 0);
+    background: rgb(136, 89, 61);
     color: #ffffff;
     backdrop-filter: blur(5px);
-    box-shadow: 0 0 6px rgb(64, 53, 1);
+    box-shadow: 0 0 6px rgb(228, 216, 169);
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 100%;
   }
   
   button:hover {
-    background: rgba(129, 119, 14, 0.622);
+    background: rgba(127, 55, 4, 0.771);
     transform: scale(1.05);
   }
 
@@ -68,10 +64,10 @@ body {
     font-size: 13px;
     border: none;
     border-radius: 10px;
-    background: rgba(0, 150, 80, 0.25);
+    background: rgb(136, 89, 61);
     color: #ffffff;
     backdrop-filter: blur(5px);
-    box-shadow: 0 0 6px rgba(0, 255, 150, 0.3);
+    box-shadow: 0 0 6px rgb(228, 216, 169);
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
@@ -79,7 +75,7 @@ body {
   }
   
   #gptInsightsBtn:hover {
-    background: rgba(0, 200, 100, 0.35);
+    background: rgba(127, 55, 4, 0.771);
     transform: scale(1.05);
   }
   
